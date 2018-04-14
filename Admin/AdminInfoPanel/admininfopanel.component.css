@@ -1,0 +1,37 @@
+.adminInfoPanel
+{
+    background-color: #F8BE30;
+}
+.shadowEffect
+{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
+}
+.noShadowEffect
+{
+	-webkit-box-shadow: 0 0px 0px 0px #777;
+	-moz-box-shadow:0 0px 0px 0px #777;
+	box-shadow: 0 0px 0px 0px #777;
+}
+.userNameChip
+{
+	margin-top: 16px;
+	margin-left: 30%;
+}
+.userDetails
+{
+	color: black;
+	font-size: 16px;
+	text-align: center;
+	margin-left: 20%;
+	margin-Right: 20%;
+}
+.userImage
+{
+	margin-left: 22%;
+	margin-Right: 22%;
+	margin-top: 16px;
+	width:50%;
+	height:50%;
+}

@@ -1,0 +1,37 @@
+<div class="row schoolGroupWorkSpaceRow">
+    <div class="row schoolGroupCardContainer shadowEffect" fxLayoutWrap="wrap" >  
+        <div fxFlex="29%" class=" row schoolGroupCard shadowEffect div_hover" *ngFor="let schoolGroup of schoolGroups"  [routerLink]="['/Home/Admin/SchoolGroups/',schoolGroup._id]">
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="deleteIcon">
+                 <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openDialog(schoolGroup._id,true)">Edit 
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-menu-item>Delete
+                     <mat-icon>delete</mat-icon>
+                </button>
+               
+            </mat-menu>
+
+            <div class="row schoolGroupCardInfo">
+                <div class="row schoolGroupCount">
+                    <div fxFlex="24%" >
+                        {{schoolGroup.schools.length}}
+                    </div>
+                    <div  fxFlex="76%" class="schoolText">
+                        school(s)
+                    </div>
+                 </div>
+                         
+            </div>
+            <div class="row schoolGroupCardFooter shadowEffect">
+                <br>
+                    {{schoolGroup.name}}
+                </div>
+                  
+            </div> 
+            <button fxFlex="29%"  mat-raised-button class=" row addSchoolGroup" (click)="openDialog()">+</button>          
+     </div>
+     
+</div>

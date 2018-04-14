@@ -1,0 +1,43 @@
+
+<div *ngIf="isVisible" class="row schoolWorkSpaceRow">
+    <div class="row schoolCardContainer shadowEffect" fxLayoutWrap="wrap" >  
+            <div fxFlex="29%" class=" row schoolCard shadowEffect div_hover" *ngFor="let school of schools" (click)="navigateToSchool(school._id)">
+                
+                <button mat-icon-button [matMenuTriggerFor]="menu" class="deleteIcon">
+                 <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="openDialog(school._id,true)">Edit 
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-menu-item>Delete
+                        <mat-icon>delete</mat-icon>
+                    </button>
+               
+                </mat-menu>
+
+                <div class="row schoolCardInfo">
+                       <div class="row schoolName">
+                            <div >
+                                 {{school.name}}
+                            </div>
+                            <div  class="cityName">
+                                 {{school.city}}
+                            </div>
+                             <div  class="cityName">
+                                 ID: {{school._id}}
+                            </div>
+                        </div>
+                         
+                </div>
+                <div class="row schoolCardFooter shadowEffect">
+                    <br>
+                    {{school.branch}}
+                </div>
+                  
+            </div> 
+            <button fxFlex="29%"  mat-raised-button class=" row addSchool" (click)="openDialog()">+</button>          
+                             
+    </div>
+</div>
+ <router-outlet></router-outlet>

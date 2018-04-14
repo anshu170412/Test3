@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="row headerTitle">
+        <br>
+        School Details
+    </div>
+    
+    <div mat-dialog-content class="school">
+         <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="School Group" [disabled]='true'>
+            
+        </mat-form-field>
+        
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="Name" [(ngModel)]="data.schoolData.name" [formControl]="nameControl">
+            <mat-error *ngIf="nameControl.hasError('required')">school name is required</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="Branch" [(ngModel)]="data.schoolData.branch" [formControl]="branchControl" >
+            <mat-error *ngIf="branchControl.hasError('required')">Branch name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="City" [(ngModel)]="data.schoolData.city" [formControl]="cityControl">
+            <mat-error *ngIf="cityControl.hasError('required')">City name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="Address" [(ngModel)]="data.schoolData.address" [formControl]="addressControl">
+            <mat-error *ngIf="addressControl.hasError('required')">Address is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="Contact Number" [(ngModel)]="data.schoolData.contactNumber"  [formControl]="contactNumberControl">
+            <mat-error *ngIf="contactNumberControl.hasError('required')">Contact Number is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="Coordinator"[(ngModel)]="data.schoolData.coordinator" [formControl]="coordinatorControl">
+            <mat-error *ngIf="coordinatorControl.hasError('required')">Coordinator Number is required</mat-error>
+        </mat-form-field>
+
+
+    </div>
+    <div mat-dialog-actions>
+        <button  mat-raised-button class="mat-primary signupButton" (click)="onNoClick()">Cancel</button>
+        <button  mat-raised-button class="mat-primary signupButton"  [disabled]='!coordinatorControl.valid   || 
+                                                                                 !contactNumberControl.valid ||
+                                                                                 !addressControl.valid ||
+                                                                                 !addressControl.valid ||
+                                                                                 !cityControl.valid    || 
+                                                                                 !branchControl.valid  ||
+                                                                                 !nameControl.valid      
+                                                                   
+                                                                        ' [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="row headerTitle">
+        <br>
+        School Group Details
+    </div> 
+    <div mat-dialog-content class="schoolGroup">
+        <mat-form-field class="inputBoxes inputControls">
+            <input matInput placeholder="Name" [(ngModel)]="data.schoolGroupData.name" [formControl]="nameControl">
+            <mat-error *ngIf="nameControl.hasError('required')">school group name is required</mat-error>
+        </mat-form-field>    
+    </div> 
+    <div mat-dialog-actions>
+        <button  mat-raised-button class="mat-primary signupButton" (click)="onNoClick()">Cancel</button>
+        <button  mat-raised-button class="mat-primary signupButton"  [disabled]='!nameControl.valid' [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+    </div>  
+</div>

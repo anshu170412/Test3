@@ -1,0 +1,18 @@
+.headerTitle
+{
+    height:48px;
+    width:100%;
+    background-color: #5DADE2;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+.school
+{
+    margin-top: 16px;
+    width:100%;
+}
+.inputControls
+{
+    width: 100%;
+}
